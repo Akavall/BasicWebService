@@ -1,6 +1,9 @@
-runtime: go
-api_version: go1
+# All the descriptins:
+# https://cloud.google.com/appengine/docs/standard/go/config/appref
+
+runtime: go # Name of runtime environment; in this case we are using go 
+api_version: go1 # latest of version 1, as of writing this it is 1.9
 
 handlers:
-- url: /.*
-  script: _go_app
+- url: /.* # All other urls are handled by go application
+  script: _go_app # For go apps, value for script should always be: _go_app
