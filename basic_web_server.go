@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"google.golang.org/appengine"
 )
 
 func index_handler(w http.ResponseWriter, r *http.Request) {
@@ -14,6 +16,6 @@ func index_handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", index_handler)
-	http.ListenAndServe("0.0.0.0:8088", nil)
-	fmt.Println("Running the server")
+
+	appengine.Main()
 }
